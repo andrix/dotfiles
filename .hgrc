@@ -1,0 +1,30 @@
+# system-wide mercurial configuration file
+# See hgrc(5) for more information
+#
+
+[ui]
+username = amoreira <andres@insophia.com>
+ssh = ssh -C
+
+[diff]
+showfunc = 1
+nodates = 1
+git = 1
+
+[extensions]
+hgext.hgk = 
+hgext.fetch =
+hgext.color =
+hgext.mq =
+hgext.transplant=
+hgext.convert=
+hgext.rebase=
+paste = ~/hg/hg-paste/paste.py
+
+[trusted]
+users = molveyra, mercurial
+groups = mercurial
+
+[alias]
+ipaste = paste --dest dpaste.org --url https://paste.insophia.com --usenetrc
+mpaste = paste --dest pastebin.dixo.net --url "https://dev.mydeco.com/pastebin/" --usenetrc

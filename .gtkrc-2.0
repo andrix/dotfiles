@@ -1,0 +1,8 @@
+gtk-icon-sizes = "panel-menu=16,16:gtk-button=16,16"
+
+style "menu-item" 
+{
+ythickness = 3
+}
+
+include ".themes/nautilus/nautilus.rc"

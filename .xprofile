@@ -1,0 +1,34 @@
+
+# Init gnome-settings-daemon
+# type gnome-settings-daemon && gnome-settings-daemon &
+# type gnome-power-manager && gnome-power-manager &
+# type gnome-volume-control-applet && gnome-volume-control-applet &
+# type gnome-volume-manager && gnome-volume-manager &
+# type gnome-screensaver && gnome-screensaver &
+# type nm-applet && nm-applet &
+# type gnome-keyring-daemon && gnome-keyring-daemon &
+
+# trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x000000 --height 12 &
+# 
+# 
+# dzonky &
+# 
+# feh --bg-scale $HOME/.wallpapers/wallpaper.jpg &
+# 
+# if [ -z `pgrep seahorse-daemon`]; then
+#    seahorse-daemon
+# fi
+
+#[ -z $SSH_USER_AGENT ] && [ -x /usr/bin/ssh-agent ] && {
+#    eval `ssh-agent -s`
+#    ssh-add </dev/null
+#}
+
+# gnome-do &
+# mail-notification &
+
+# feh --bg-scale $HOME/.wallpapers/wallpaper.jpg &
+#
+xcompmgr -s -F -n -D 3 -C &
+
+xrdb -merge ~/.Xdefaults
