@@ -1,0 +1,98 @@
+" description:	color scheme based on google's
+"      author:	kamil.stachowski@gmail.com
+"     license:	gpl 3+
+"     version:	0.2 (2008.11.27)
+
+" changelog:
+"         0.2:	2008.11.27
+"         		changed MatchParen to link to Type (thanks to Jarosław Mężyk)
+"         		added Diff*
+"         0.1:	2008.11.20
+"       		initial version
+
+
+set background=light
+
+hi clear
+if exists("syntax_on")
+	syntax reset
+endif
+
+let colors_name = "andrix"
+
+"hi Normal ctermfg=black ctermbg=white guifg=black guibg=white
+
+"hi Comment      ctermfg=246         ctermbg=white        guifg=#aaaaaa  guibg=#ffffff   gui=none
+hi Comment      ctermfg=72          ctermbg=white        guifg=#aaaaaa  guibg=#ffffff   gui=none
+hi Constant     ctermfg=39          ctermbg=white        guifg=#6694e3  guibg=#ffffff   gui=none
+hi Cursor       ctermfg=white	    ctermbg=black        guifg=#ffffff  guibg=#000000   gui=none
+hi CursorLine		          	    ctermbg=255                         guibg=#efefef	gui=none
+hi DiffAdd	    ctermfg=white	    ctermbg=36	         guifg=#ffffff	guibg=#006633	gui=none
+hi DiffChange	ctermfg=black	    ctermbg=229          guifg=#000000	guibg=#ffffb5	gui=none
+hi DiffDelete	ctermfg=black	    ctermbg=132          guifg=#000000	guibg=#d96666	gui=none
+hi DiffText		ctermfg=132	        ctermbg=229	         guifg=#d96666	guibg=#ffffb5	gui=none
+hi Folded 		ctermbg=black	    ctermfg=255	         guifg=#000000  guibg=#efefef	gui=italic          cterm=italic
+hi Identifier 	ctermfg=105	        ctermbg=white	     guifg=#7799bb	guibg=#ffffff	gui=none
+hi ModeMsg		ctermfg=white	    ctermbg=39	         guifg=#ffffff	guibg=#6694e3	gui=bold            cterm=bold
+hi NonText 		ctermfg=255	        ctermbg=white        guifg=#f0f0f0	guibg=#ffffff	gui=none
+hi Normal    	ctermfg=white	    ctermbg=black	     guifg=#000000	guibg=#ffffff	gui=none
+
+"hi PreProc  	ctermfg=43	        ctermbg=white	     guifg=#46aa64	guibg=#ffffff	gui=none
+hi PreProc  	ctermfg=36	        ctermbg=white	     guifg=#46aa64	guibg=#ffffff	gui=none
+
+hi Search	    ctermfg=black	    ctermbg=229	         guifg=#000000	guibg=#ffffb5
+hi Special	    ctermfg=25	        ctermbg=white	     guifg=#2a5db0	guibg=#ffffff	gui=none
+hi Statement 	ctermfg=25	        ctermbg=white        guifg=#2a5db0	guibg=#ffffff	gui=bold,underline  cterm=bold,underline
+hi StatusLine 	ctermfg=white	    ctermbg=39           guifg=#ffffff	guibg=#6694e3	gui=bold            cterm=bold
+hi StatusLineNC ctermfg=246	        ctermbg=220          guifg=#aaaaaa	guibg=#e0ecff	gui=none
+hi Todo 		ctermfg=white	    ctermbg=132          guifg=#ffffff	guibg=#d96666	gui=bold            cterm=bold 
+hi Type 		ctermfg=36	        ctermbg=white        guifg=#006633	guibg=#ffffff	gui=bold            cterm=bold
+hi Underlined	ctermfg=black	    ctermbg=white        guifg=#000000	guibg=#ffffff	gui=underline       cterm=underline
+hi VertSplit	ctermfg=220	        ctermbg=220          guifg=#e0ecff	guibg=#e0ecff	gui=none
+hi Visual		ctermfg=white	    ctermbg=39           guifg=#ffffff	guibg=#6694e3	gui=none
+
+hi!	link Macro			PreProc
+hi! link Boolean		Constant
+hi! link Character		Constant
+hi! link Conditional	Statement
+hi! link CursorColumn	CursorLine
+hi! link Debug			PreProc	
+hi! link Define			PreProc
+hi! link Delimiter		Identifier
+hi! link Directory		Statement
+hi! link Error			Todo
+hi! link ErrorMsg		Error
+hi! link Exception		Statement
+hi! link Float			Constant
+hi! link FoldColumn		Folded
+hi! link Function		Identifier
+hi! link Function		Identifier
+hi! link Ignore			Comment
+hi! link Include		PreProc
+hi! link IncSearch		Search
+hi! link Keyword		Identifier
+hi! link Keyword		Identifier
+hi! link Label			Statement
+hi! link LineNr			Comment
+hi! link MatchParen		Statement
+hi! link MoreMsg		Identifier
+hi! link NonText		Comment
+hi! link Number			Constant
+hi! link Operator		Identifier
+hi! link Question		MoreMsg
+hi! link PreCondit		PreProc
+hi! link Repeat			Statement
+hi! link SignColumn		Identifier
+hi! link SpecialChar	Special
+hi! link SpecialComment	Special
+hi! link SpecialKey		Special
+hi! link SpellBad		Error
+hi! link SpellCap		Error
+hi! link SpellLocal		Error
+hi! link SpellRare		Error
+hi! link StorageClass	Type
+hi! link String			Constant
+hi! link Structure		Type
+hi! link Title			Structure
+hi! link Typedef		Type
+hi! link WarningMsg		Error

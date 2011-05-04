@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/andres/hg/mydeco/search/mydeco/search/indexer/cqr/cache'
+let g:netrw_dirhist_2='/home/andres/hg/mydeco/search/mydeco/search/indexer/cqr/indexing'
+let g:netrw_dirhist_3='/home/andres/hg/mydeco/search/.hg/patches-srch_1328'
+let g:netrw_dirhist_4='/home/andres/.config/autostart'
