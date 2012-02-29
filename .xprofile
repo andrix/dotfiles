@@ -32,3 +32,6 @@
 xcompmgr -s -F -n -D 3 -C &
 
 xrdb -merge ~/.Xdefaults
+
+indicator-workspaces &
+

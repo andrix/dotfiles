@@ -3,7 +3,7 @@
 #
 
 [ui]
-username = amoreira <andres@insophia.com>
+username = Andres Moreira <andres@insophia.com>
 ssh = ssh -C
 
 [diff]
@@ -20,11 +20,20 @@ hgext.transplant=
 hgext.convert=
 hgext.rebase=
 paste = ~/hg/hg-paste/paste.py
+graphlog =
+hgext.extdiff =
+hgext.collapse = ~/.hg/extensions/hgext/collapse.py
 
 [trusted]
 users = molveyra, mercurial
 groups = mercurial
 
 [alias]
-ipaste = paste --dest dpaste.org --url https://paste.insophia.com --usenetrc
+ipaste = paste --dest lodgeit --url "https://paste.insophia.com" --usenetrc
 mpaste = paste --dest pastebin.dixo.net --url "https://dev.mydeco.com/pastebin/" --usenetrc
+
+[extdiff]
+# if cwdiff is in your path, otherwise set to wherever you've installed cwdiff
+cmd.wdiff = cwdiff
+#add --no-color below, if you dislike colors!
+opts.wdiff = --diff --ab

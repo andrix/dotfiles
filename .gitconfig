@@ -1,0 +1,12 @@
+[user]
+	name = Andrés Moreira
+	email = andres@andresmoreira.com
+
+[remote "kalessin_pylinq"]
+    url = http://github.com/andrix/PyLINQ.git
+    fetch = +refs/heads/*:refs/remotes/kalessin/*
+    merge = refs/heads/master
+
+[color]
+    status = auto
+
