@@ -37,7 +37,7 @@ main = do
     terminal = myTerminal
     , modMask = myModMask
     , layoutHook = myLayouts
-    , manageHook = myManageHook <+> manageHook desktopConfig
+    , manageHook = namedScratchpadManageHook scratchpads <+> myManageHook <+> manageHook desktopConfig
     , workspaces         = myWorkspaces
     , keys = myKeys
 
@@ -75,7 +75,14 @@ myManageHook = composeAll
   , className  =? "gloobus-preview" --> doCenterFloat
   , className  =? "Gloobus-preview" --> doCenterFloat
   , className  =? "Do"              --> doIgnore
+  , className  =? "mplayer2"              --> doFullFloat
   ] 
+
+scratchpads = [ 
+    NS "ipython" "gnome-terminal -e ipython --title='sc-python'" (title =? "sc-python") (customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3))
+  , NS "htop" "gnome-terminal -e htop --title='sc-htop'" (title =? "sc-htop") (customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3))
+  , NS "todo" "gvim --role todolist ~/Dropbox/todo.txt" (role =? "todolist") (customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3))
+    ] where role = stringProperty "WM_WINDOW_ROLE"
 
 
 myWorkspaces = ["web", "mail", "im", "code"] ++ ["5", "6", "7", "8", "9"] ++ ["social"]
@@ -86,11 +93,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
  
     -- Synapse seems to doing it right til now
-    , ((modm,               xK_p     ), spawn "synapse")
+    --, ((modm,               xK_backslash     ), spawn "synapse")
 
     --, ((modm,               xK_p     ), spawn "gnome-do")
 
-    -- , ((modm,               xK_backslash), spawn "dbus-send --type=method_call --dest=com.canonical.Unity2d /Dash com.canonical.Unity2d.Dash.activateHome")
+    , ((modm,                 xK_p     ), spawn "synapse")
+    --, ((modm,               xK_p), spawn "dbus-cli com.canonical.Unity2d.Dash /Dash activateHome")
 
     , ((modm,                  xK_backslash), runOrRaisePrompt defaultXPConfig)
 
@@ -159,6 +167,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
        
     -- Screenshot   
     ,  ((0, xK_Print), spawn "scrot")
+-- Scratchpads
+
+    , ((modm              , xK_o     ), namedScratchpadAction scratchpads "ipython")
+
+    , ((modm              , xK_i     ), namedScratchpadAction scratchpads "htop")
+
+    , ((modm              , xK_u     ), namedScratchpadAction scratchpads "todo")
 
     ]
     ++

@@ -3,7 +3,7 @@
 #
 
 [ui]
-username = Andres Moreira <andres@insophia.com>
+username = Andres Moreira <andres@scrapinghub.com>
 ssh = ssh -C
 
 [diff]
@@ -29,7 +29,7 @@ users = molveyra, mercurial
 groups = mercurial
 
 [alias]
-ipaste = paste --dest lodgeit --url "https://paste.insophia.com" --usenetrc
+spaste = paste --dest lodgeit --url "https://paste.scrapinghub.com" --usenetrc
 mpaste = paste --dest pastebin.dixo.net --url "https://dev.mydeco.com/pastebin/" --usenetrc
 
 [extdiff]
